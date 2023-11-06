@@ -1,0 +1,1 @@
+mxcc sample_mcblas.c -I${MACA_PATH}/include -I${MACA_PATH}/include/mcblas -I${MACA_PATH}/include/mcr -L${MACA_PATH}/lib -lmcruntime -lmcblas
