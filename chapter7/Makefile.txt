@@ -1,0 +1,28 @@
+# MXMACA Compiler
+MXCC = $(MACA_PATH)/mxgpu_llvm/bin/mxcc
+
+# Compiler flags
+MXCCFLAGS = -xmaca
+
+# Source files
+SRCS= main.cpp src/a.cpp src/b.cpp
+
+# Object files
+OBJS = $(SRCS:.cpp=.o)
+
+# Executable
+EXEC = my_program
+
+# Default target
+all: $(EXEC)
+
+# Link object files to create executable
+$(EXEC): $(OBJS)
+	$(MXCC) $(OBJS) -o $(EXEC)
+
+%.o: %.cpp
+	$(MXCC) $(MXCCFLAGS) -c $< -o $@ -I include
+
+# clean up object files and executable
+clean:
+	rm -f $(OBJS) $(EXEC)
