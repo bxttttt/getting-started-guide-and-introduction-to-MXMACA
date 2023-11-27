@@ -427,6 +427,8 @@ int main(void)
 
 <img src=".\习题运行结果\5.2.9.1运行结果\2.png">
 
+<img src=".\习题运行结果\5.2.9.1运行结果\3.png">
+
 同一个wave内部thread的执行是顺序的。block的执行不是顺序的。
 
 在MXMACA中，wave对程序员来说是透明的，它的大小可能会随着硬件的发展发生变化，在当前版本的MXMACA中，每个wave是由64个thread组成的。由64个thread组成的wave是MACA程序执行的最小单位，并且同一个wave是串行的。在一个SM中可能同时有来自不同block的wave。当一个block中的wave在进行访存或者同步等高延迟操作时，另一个block可以占用SM中的计算资源。这样，在SM内就实现了简单的乱序执行。不同block之间的执行没有顺序，完全并行。并且，一个sm只会执行一个block里的wave，当该block里的wave执行完才会执行其他block里的wave。
@@ -466,7 +468,9 @@ int main(void)
 
 
 
-<img src=".\习题运行结果\5.2.9.1运行结果\2.png">
+<img src=".\习题运行结果\5.2.9.2运行结果\2.png">
+
+<img src=".\习题运行结果\5.2.9.2运行结果\3.png">
 
 没有定义，默认为0.
 
@@ -620,7 +624,7 @@ int main(int argc,char *argv[]){
 ```
 mxcc -x maca vectorAdd.cpp -o vectorAdd
 
-./vectorAdd 10
+./vectorAdd 10 （可以自定义其他数值）
 ```
 
 <img src=".\习题运行结果\统一内存寻址运行结果.png">
