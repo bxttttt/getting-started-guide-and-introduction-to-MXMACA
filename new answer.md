@@ -733,7 +733,6 @@ int main(int argc, char **argv)
     free(h_C);
 }
 
-//参考代码：https://blog.csdn.net/qq_37764141/article/details/122609942
 ```
 
 
