@@ -568,6 +568,8 @@ int main()
 
 改用统一寻址方式简化vectorAdd
 
+#### 参考代码
+
 ```c++
 #include <iostream>
 #include <cstdlib>
@@ -609,6 +611,8 @@ int main(int argc,char *argv[]){
 }
 ```
 
+#### 运行结果
+
 文件另存为vectorAdd.cpp
 
 在控制台输入：
@@ -618,8 +622,6 @@ mxcc -x maca vectorAdd.cpp -o vectorAdd
 
 ./vectorAdd 10
 ```
-
-输出结果如下：
 
 <img src=".\习题运行结果\统一内存寻址运行结果.png">
 
