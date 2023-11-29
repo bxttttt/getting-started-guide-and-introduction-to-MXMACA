@@ -110,6 +110,8 @@ int main(void)
 
 ### Exercise 1 
 
+#### 参考代码
+
 ```c++
 #include <iostream>
 #include <cstdlib>
@@ -123,7 +125,7 @@ using namespace std;
 __global__ void gpuVectorAddKernel(float* A_d,float* B_d,float* C_d, int N)
 {
     int i = threadIdx.x + blockDim.x * blockIdx.x;
-    printf("threadIdx.x:%d  blockDim.x:%d  blockIdx.x:%d\n",threadIdx.x,blockDim.x,blockIdx.x);
+    // printf("threadIdx.x:%d  blockDim.x:%d  blockIdx.x:%d\n",threadIdx.x,blockDim.x,blockIdx.x);
     if (i < N) C_d[i] = A_d[i] + B_d[i];
 }
 
@@ -199,9 +201,13 @@ int main(int argc, char *argv[]) {
 
 ```
 
+#### 运行结果
 
+<img src=".\3.1.png">
 
 ### Exercise 2
+
+#### 参考代码
 
 ```c++
 #include <iostream>
@@ -216,7 +222,7 @@ using namespace std;
 __global__ void gpuVectorAddKernel(float* A_d,float* B_d,float* C_d, int N)
 {
     int i = threadIdx.x + blockDim.x * blockIdx.x;
-    printf("threadIdx.x:%d  blockDim.x:%d  blockIdx.x:%d\n",threadIdx.x,blockDim.x,blockIdx.x);
+    // printf("threadIdx.x:%d  blockDim.x:%d  blockIdx.x:%d\n",threadIdx.x,blockDim.x,blockIdx.x);
     if (i < N) C_d[i] = A_d[i] + B_d[i];
 }
 
@@ -227,7 +233,7 @@ int main(int argc, char *argv[]) {
 
     size_t size = n * sizeof(float);
 
-    // host memery
+    // host memory
     float *a = (float *)malloc(size);
     float *b = (float *)malloc(size);
     float *c = (float *)malloc(size);
@@ -291,7 +297,9 @@ int main(int argc, char *argv[]) {
 
 ```
 
+#### 运行结果
 
+<img src=".\3.2.png">
 
 ### Exercise 3 
 
@@ -420,8 +428,6 @@ int main(void)
 ```
 
 ##### 运行结果（一部分）
-
-
 
 <img src=".\5.2.9.1运行结果\1.png">
 
