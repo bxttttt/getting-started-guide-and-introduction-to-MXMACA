@@ -797,15 +797,7 @@ int main() {
 
 ```
 
-`mandelbrot` 函数计算给定复数的Mandelbrot迭代次数。
 
-`mandelbrot_kernel` 核函数在每个线程中计算像素点的迭代次数，并将结果存储在 `output` 数组中。
-
-`mandelbrotSet` 函数用于分配和释放设备内存，并在设备上调用核函数进行计算。
-
-最后，在 `main` 函数中，我们定义了图像的宽度、高度和最大迭代次数，并调用 `mandelbrotSet` 函数来计算Mandelbrot集合，并将结果存储在 `output` 数组中。
-
-可以根据需要修改图像的宽度、高度、迭代次数以及计算范围，然后将结果输出或保存为图像文件。
 
 ## Chapter 6
 
